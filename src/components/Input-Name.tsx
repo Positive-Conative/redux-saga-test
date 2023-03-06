@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 import { useDispatch } from "react-redux";
-import { setUserName } from '../reducers/user-info';
+import { increaseAsync } from '../reducers/user-info';
 
 // 이름을 입력받는 컴포넌트
 const InputName = () => {
@@ -8,7 +8,7 @@ const InputName = () => {
     const dispatch = useDispatch();
 
     const handleInputName = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch(setUserName(e.target.value));  // 적용!
+        dispatch(increaseAsync(e.target.value));  // 적용!
     }
 
     return (
